@@ -177,7 +177,12 @@ typedef enum IRQn
 
 /* enum definitions */
 typedef enum {DISABLE = 0, ENABLE = !DISABLE} EventStatus, ControlStatus;
-typedef enum {FALSE = 0, TRUE = !FALSE} bool;
+#ifdef __cplusplus
+    #define TRUE true
+    #define FALSE false 
+#else
+    typedef enum {FALSE = 0, TRUE = !FALSE} bool;
+#endif /* __cplusplus */
 typedef enum {RESET = 0, SET = !RESET} FlagStatus;
 typedef enum {ERROR = 0, SUCCESS = !ERROR} ErrStatus;
 

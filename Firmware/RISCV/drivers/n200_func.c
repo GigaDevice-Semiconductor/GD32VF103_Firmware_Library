@@ -11,6 +11,8 @@
 #endif
 
 #include "riscv_encoding.h"
+#include "n200_eclic.h"
+#include "n200_timer.h"
 #include "n200_func.h"
 
 /* Configure PMP to make all the address space accesable and executable */
